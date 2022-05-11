@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+    <html>
+        <body>
+            <center>
+                <img src="stare.png">
+                <script src="ip.js"></script>
+                <div id="output"></div>
+            </center>
+        </body>
+-->
+
+<html>
+    <body>
+        <center>
+            <img src='stare.png'>
+            <p id="demo"></p>
+            <p>I am inside your home.</p>
+        </center>
+<script>
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+document.getElementById("demo").innerHTML = httpGet('https://ifconfig.me/ip');
+</script>
+
+    </body>
+</html> 
